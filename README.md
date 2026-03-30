@@ -23,7 +23,7 @@ This article introduces HistoRAG, a framework for redesigning Retrieval-Augmente
 
 ## Running the Notebook
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/noahjb27/spiegelragged_jdh/main?filepath=article.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jdh-observer/QYo7itiuAYX9/main?filepath=article.ipynb)
 
 ```bash
 pip install -r requirements.txt
