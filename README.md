@@ -1,60 +1,39 @@
-# Journal of Digital History Author's Repository
+# HistoRAG: Designing a Methodologically Informed Retrieval-Augmented Generation System for Historical Research — Demonstrated through a Case Study of Der Spiegel (1950–1979) and the Computerisation of the Early Federal Republic
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/C2DH/template_repo_JDH/main?filepath=article.ipynb)
+**Journal of Digital History** submission repository
 
-This repository serves as a resource for authors submitting articles to the [Journal of Digital History](https://journalofdigitalhistory.org).
-It contains a Jupyter notebook that provides an example and a simple structure that can be used to write articles for the journal.
-The repository also includes a `preflight`github action that can be automatically triggered on commit, but by default, it is set to `workflow_dispatch`and actionable from the `actions` page on GitHub.
-The preflight action generates a report within the repository that contains information about the adherence of the article to the submission guidelines.
+## Authors
 
-## Contents
+- Noah J. Kim-Baumann [![ORCID](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0009-0004-6368-3061), Humboldt-Universität zu Berlin
+- Torsten Hiltmann [![ORCID](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0002-6757-6210), Humboldt-Universität zu Berlin
 
-`article.ipynb` - This Jupyter notebook provides an example and a simple structure that authors can use to write articles for the Journal of Digital History. You can rename it according to your article name.
+## Abstract
 
-`.github/workflows/github-actions-preflight.yml` - This workflow file contains the preflight action that can be triggered automatically on commit or manually using the workflow_dispatch event to check that the article respects the Journal guidelines.
+This article introduces HistoRAG, a framework for redesigning Retrieval-Augmented Generation (RAG) to support historical research methodology. Standard RAG systems are built for factual question-answering, treating retrieval and generation as a seamless pipeline optimised for speed and accuracy. Historical scholarship, by contrast, demands source sovereignty, interpretive transparency, and temporal sensitivity, values that standard architectures not only fail to support but actively undermine. Drawing on Agre's Critical Technical Practice, we embed these disciplinary commitments into system architecture through three interventions: separated retrieval and generation, which restores the historian's heuristic phase of source evaluation before computational interpretation begins; temporal windowing, which counters the presentist bias of similarity-based retrieval by ensuring proportional representation across the research period; and LLM-as-a-Judge, which introduces transparent, contestable evaluation of source relevance against researcher-defined criteria. We demonstrate the framework through a case study analysing computerisation discourse in Der Spiegel (1950–1979), working with a corpus of 102,189 articles. Empirical evaluation shows that semantic retrieval combined with LLM evaluation surfaces relevant sources that keyword filtering misses, while the LLM-as-a-Judge component proves essential for managing the noise that broadened retrieval introduces. The generation phase produces what we term Zwischentexte (intermediate texts), these are not answers but interpretive proposals that historians can verify, contest, and develop. We argue that the central question for LLMs in digital humanities is not whether machines can "read" but how we design systems that make their interpretive interventions visible and contestable, preserving the scholar's epistemic agency throughout.
 
-The preflight action generates or updates a report markdown file in the repository that provides information about the adherence of the article to the submission guidelines, usually named `report.md`
+## Repository Structure
 
-`requirements.txt` - stores information about all the libraries, modules, and packages in itself that are used while developing a particular project.
+- `article.ipynb` — The article notebook (narrative, hermeneutic, and data layers)
+- `media/` — Images and figures used in the article
+- `script/` — Supporting data and analysis scripts
+- `corpus_data/` — Corpus data (yearly CSV files from *Der Spiegel*)
+- `requirements.txt` — Python dependencies
+- `runtime.txt` — Python runtime version specification
+- `.github/workflows/` — JDH preflight validation action
 
-`runtime.txt` - specify the version of the runtime (e.g. the version of Python ). Have python-x.y in runtime.txt to run the repository with Python version x.y
+## Running the Notebook
 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/noahjb27/spiegelragged_jdh/main?filepath=article.ipynb)
 
-## Getting Started
+```bash
+pip install -r requirements.txt
+jupyter notebook article.ipynb
+```
 
-This repository it's a _template_, that is, it can be used as a starting point for new repositories.
-On GitHub.com:
+## Preflight Validation
 
-1. navigate to the main page of the repository.
-2. Above the file list, click Use this template.
-3. Select Create a new repository.
-4. Type a name for your new repository, and an optional description.
-5. Click Create repository from template.
-
-Please follow the rest of the documentation on [GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) to understand how to create a new repository from this template.
-
-Use the example notebook as a template to write your article. You can modify the notebook to suit your needs and add your content.
-
-## Preflight Action
-
-To check if the article respects the Guidelines, we decided to create a `preflight` GitHub action that can be triggered automatically on commit - or manually using the `workflow_dispatch` event. The action is triggered by the `github-actions-preflight.yml` file in the `.github/workflows` folder.
-By default, the preflight action is set to `workflow_dispatch`, which means you can manually trigger it by going to the "Actions" tab in the repository, selecting the "Preflight" workflow, and clicking the "Run workflow" button.
-The preflight action will generate a report in the repository that provides information about the adherence of your article to the submission guidelines.
-
-## MyBinder
-
-The repository also contains a `requirements.txt` and a `runtime.txt` file that can be used to create a MyBinder environment. Check: https://mybinder.readthedocs.io/en/latest/using/config_files.html#preparing-a-repository-for-binder
-The MyBinder environment can be used to run the example notebook to test that the code runs smoothly. 
-
-## Contribution Guidelines
-
-We welcome contributions to this repository that aim to improve the example notebook, the preflight action, or the overall workflow for authors submitting articles to the Journal of Digital History. Just contact us or open an issue.
+The repository includes a GitHub Actions workflow that validates the notebook against JDH submission guidelines. Trigger it manually from the Actions tab or it runs on push.
 
 ## License
 
-Copyright (C) 2023 university of Luxembourg.
-This program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
-This program is distributed in the hope that it will be useful, but without any warranty; without even the implied warranty of merchantability or fitness for a particular purpose. See the GNU Affero General Public License for more details.
-You should have received a copy of the GNU Affero General Public License along with this program. If not, see <https://www.gnu.org/licenses/>.
-
-We hope this repository and the provided example notebook are helpful for authors submitting articles to the Journal of Digital History. If you have any questions, feedback, or suggestions, please feel free to open an issue or contact us. Thank you for your contribution!
+This article is published under the [Creative Commons Attribution License (CC-BY)](https://creativecommons.org/licenses/by/4.0/).
