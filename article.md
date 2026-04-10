@@ -17,18 +17,17 @@ jupyter:
 <!-- #endregion -->
 
 <!-- #region tags=["contributor"] -->
- ### Noah J. Kim-Baumann [![orcid](./media/image.png)](https://orcid.org/0009-0004-6368-3061) 
+ ### Noah J. Kim-Baumann [![orcid](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0009-0004-6368-3061)
 Humboldt-Universität zu Berlin
 <!-- #endregion -->
 
 <!-- #region tags=["contributor"] -->
-### Torsten Hiltmann [![orcid](./media/image.png)](https://orcid.org/0000-0002-6757-6210) 
+### Torsten Hiltmann [![orcid](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0002-6757-6210) 
 Humboldt-Universität zu Berlin
 <!-- #endregion -->
 
 <!-- #region tags=["copyright"] -->
-©Noah J. Kim-Baumann, Torsten Hiltmann. Published by De Gruyter in cooperation with the University of Luxembourg Centre for Contemporary and Digital History. This is an Open Access article distributed under the terms of the [Creative Commons Attribution License CC-BY](https://creativecommons.org/licenses/by/4.0/){:target="_blank"}
-
+©Noah J. Kim-Baumann, Torsten Hiltmann. Published by De Gruyter in cooperation with the University of Luxembourg Centre for Contemporary and Digital History. This is an Open Access article distributed under the terms of the [Creative Commons Attribution License CC-BY](https://creativecommons.org/licenses/by/4.0/)
 <!-- #endregion -->
 
 ```python tags=["cover"]
