@@ -63,7 +63,7 @@ This article introduces HistoRAG, a framework for redesigning Retrieval-Augmente
 
 Digital History is currently undergoing a transition that is both fundamental and disruptive. For decades, computational methods have offered historians powerful tools for analysing large corpora. Methods that, as we argue, generally share a focus of operating on sequences of characters, i.e. the level of signs rather than meaning. Large Language Models (LLMs) now promise something fundamentally different. Semantic interpretation at scale. This shift from computing sequences of characters to computing the semantic meaning of those sequences of characters raises urgent questions. How do we preserve historical scholarship's commitment to source criticism, interpretive authority, and transparent argumentation when working with AI systems that can "understand" thousands of documents and generate plausible-sounding analyses? This paper argues that Retrieval-Augmented Generation (RAG), when designed around historical methodology rather than technical optimisation, offers a path forward. But only if we actively shape these systems to embody the epistemological values that define our discipline. 
 
-<!-- #region citation-manager={"citations": {"hiltmann2021DigitalMethodsPractice": {"id": "hiltmann2021DigitalMethodsPractice"}, "mohr2015ComputationalHermeneutics": {"id": "mohr2015ComputationalHermeneutics"}, "rockwell2016HermeneuticaComputerassistedInterpretation": {"id": "rockwell2016HermeneuticaComputerassistedInterpretation"}, "welskopp2008HistorischeErkenntnis": {"id": "welskopp2008HistorischeErkenntnis"}}} -->
+
 **From Quellengenres to Computational Methods**
 
 As Welskopp (<cite data-cite="welskopp2008HistorischeErkenntnis"></cite>) argues, the expanding empirical basis of historical research (from textual sources to numerical data, artefacts, images, and audiovisual material) has made methodological pluralism not a weakness of the discipline but a necessity. Among the consequences of this expansion is the growing confrontation with large corpora of sources: vast collections of periodicals, correspondence, administrative records, and other serial sources that extend far beyond the individual documents traditional analogue hermeneutic practices were designed to handle. These corpora demand new analytical approaches that can operate at scale, while still supporting the interpretive work that defines historical research, namely understanding context, evaluating reliability, and constructing plausible arguments about the past. This tension between empirical scale and interpretation has driven the development of computational methods in historical research.
@@ -71,9 +71,8 @@ As Welskopp (<cite data-cite="welskopp2008HistorischeErkenntnis"></cite>) argues
 The computational approaches that emerged form what we might retrospectively call DH 1.0. These share a fundamental characteristic in that they operate at the level of sequences of characters rather than semantic meaning. Whether employing topic modelling, stylometry, or text reuse detection, these methods are what Hiltmann et al. (<cite data-cite="hiltmann2021DigitalMethodsPractice"></cite>) describe as "semantically blind." Computers process text as sequences of characters in the "realm of signal" rather than the "realm of meaning" (p. 133). A text reuse tool like TRACER can identify that the word "mirabilia" appears 62 times in the Vulgate, but it cannot understand why a crusade chronicler might invoke this term or what meanings it carries in different contexts (<cite data-cite="hiltmann2021DigitalMethodsPractice"></cite>, p. 132). Topic modelling operates on co-occurrence matrices (statistical patterns of words appearing near each other) which Mohr et al. (<cite data-cite="mohr2015ComputationalHermeneutics"></cite>) aptly describe as a "poor-man's measure of semantic structure" (p. 2). Tools like Voyant, widely used in Digital History, exemplify this approach. They offer powerful ways to visualise word frequencies, identify patterns, and compare texts, but they work entirely through sequence-based operations (<cite data-cite="rockwell2016HermeneuticaComputerassistedInterpretation"></cite>).
 
 This creates a formalisation-interpretation gap. DH 1.0 methods excel at certain tasks, aligned with scaling across massive corpora, identifying formal patterns, ensuring reproducibility through explicit procedures. But they require historians to perform two distinct types of labour. Firstly, translating research questions into the formal operations a computer can execute (what should be encoded? which patterns matter? how should similarity be measured?), and second, interpreting the results back into historical meaning (what do these word frequency lists tell us? why do these documents cluster together? is the parallel use of a given chain of characters in two texts coincidence or is it actually meaningful?). The historian works between quantitative outputs (similarity scores, network graphs, distribution curves) and historical understanding, bridging the gap that sequence-based methods cannot themselves cross. Yet this explicit formalisation also carries a methodological strength, as historians must themselves interpret results against the background of their formalisation, maintaining interpretive authority throughout the process.
-<!-- #endregion -->
 
-<!-- #region citation-manager={"citations": {"grossmann2023AITransformationSocial": {"id": "grossmann2023AITransformationSocial"}, "simons2025LargeLanguageModelsa": {"id": "simons2025LargeLanguageModelsa"}, "tomlinson2025WorkingAIMeasuring": {"id": "tomlinson2025WorkingAIMeasuring"}}} -->
+
 **LLMs and the Promise of Semantic Interpretation**
 
 Large Language Models represent a fundamental shift in this landscape. Unlike DH 1.0 methods that operate on character sequences, LLMs work with what Simons, Zichert, and Wüthrich (<cite data-cite="simons2025LargeLanguageModelsa"></cite>) call "contextualised representations". They are computational approximations of meaning that enable both pattern recognition and interpretive generation (p. 2). The computational task moves from counting characters to inferring meaning from context, from identifying that words appear together to understanding how they relate to each other as a network of words. This shift promises to bridge aspects of both traditional historical practice and computational scale. LLMs can engage with contextual nuance, handle ambiguity, and work at the semantic level AND they can process thousands of documents, identifying patterns invisible at scale.
@@ -81,9 +80,8 @@ Large Language Models represent a fundamental shift in this landscape. Unlike DH
 This potential comes with profound dangers. If DH 1.0's sequence-based methods required historians to explicitly formalise their analytical choices and interpret the results of the process on this basis, LLMs risk hiding these choices entirely. When a system can "read" thousands of sources and generate coherent analyses, how do we preserve the interpretive authority that defines historical scholarship? How do we maintain the transparency and contestability that historical methodology demands, precisely because our claims cannot be validated through experimental replication? As Chen et al. (<cite data-cite="chen2025ToolsGenerativeAI"></cite>) argue, this is fundamentally a question of epistemic agency. Of preserving researchers' capacity to make, evaluate, and contest knowledge claims rather than delegating these to computational systems. The risk is not that AI will replace historians but that we will accept interfaces that obscure the critical decisions (source selection, relevance evaluation, interpretive framing) that constitute scholarly practice.
 
 This urgency is underscored by recent workforce studies identifying historians among professions with high "AI applicability scores" (<cite data-cite="tomlinson2025WorkingAIMeasuring"></cite>). While such assessments often miss the interpretive complexity of historical practice (particularly the physicality of archival work), there is truth in recognising that portions of historical labour are "augmentable." But rather than asking how historians should adapt to AI, as some propose (<cite data-cite="grossmann2023AITransformationSocial"></cite>), we must invert the question and ask how computational systems can be designed to preserve and extend historical methodology? If we do not actively shape the tools we use, commercial vendors will design them for us, optimising for efficiency and seamless user experience rather than epistemic transparency, losing the core of academic research (<cite data-cite="chen2025ToolsGenerativeAI"></cite>).
-<!-- #endregion -->
 
-<!-- #region citation-manager={"citations": {"simons2025LargeLanguageModelsa": {"id": "simons2025LargeLanguageModelsa"}}} -->
+
 **RAG as Methodological Architecture**
 
 If LLMs are to support historical research without undermining its foundations, we need architectures that preserve source traceability and enable critical evaluation. This is why we argue for Retrieval-Augmented Generation rather than fine-tuning as the appropriate framework for LLM usage in history. This requires first understanding what LLMs fundamentally are, and are not. LLMs are not designed to reproduce facts but to produce language. Built on networks of words and their contextual relationships, they operate in a structuralist sense where the meaning of a word derives from its relations to other words. While this inherently involves factual content, LLMs have no reference system and no truth claim. They are, in essence, language generation systems rather than knowledge retrieval systems (<cite data-cite="weatherby2025LanguageMachinesCultural"></cite>). Fine-tuning (training a model on specific historical corpora) buries whatever knowledge it absorbs within neural network weights, producing outputs that mimic expertise without the ability to cite sources, generating plausible text based on statistical likelihood rather than traceable evidence. This violates a fundamental principle of historical scholarship, historical claims must remain connected to their evidentiary foundations.
@@ -99,9 +97,8 @@ Similarly, digital search interfaces also have shared epistemological agency. Da
 The mere fact that how we share this agency is changing, and that we might share it with LLMs need not be inherently bad. Cultural techniques (*Kulturtechniken*) and scholarly practices (*Wissenschaftspraktiken*) evolve. We no longer use card catalogues (Zettelkatalog), and this is not inherently problematic. But some transformations carry different risks. The GPS user who blindly follows directions without checking against physical reality can end up driving into a river. The danger is not change itself but losing awareness of what we are doing and why. 
 
 For historical research, this means preserving the tenets of historical work (saubere historische Arbeit), mainly the grounding in source sovereignty (Hoheit der Quelle) and source citation (Quellenbeleg). These principles, though articulated differently across historiographical traditions, reflect a shared commitment to transparent source work that underlies both traditional Quellenkritik and more recent discussions of historical synthesis. Historical claims must remain traceable to their evidentiary foundations. A seamless RAG interface that simply answers questions threatens this foundation by hiding the crucial decisions about which sources matter and why. Our methodological interventions are designed to prevent this loss of awareness, ensuring that computational affordances enhance rather than undermine the practices that define historical scholarship.
-<!-- #endregion -->
 
-<!-- #region citation-manager={"citations": {"agre1998CriticalTechnicalPractice": {"id": "agre1998CriticalTechnicalPractice"}, "fickers2022DigitalHistoryHermeneutics": {"id": "fickers2022DigitalHistoryHermeneutics"}}} -->
+
 **Critical Technical Practice and Three Methodological Interventions**
 
 Our approach draws on what Agre (<cite data-cite="agre1998CriticalTechnicalPractice"></cite>) termed Critical Technical Practice, emphasising the act of not critiquing technology from outside but actively designing technical systems that embody methodological principles. As Fickers and Tatarinov (<cite data-cite="fickers2022DigitalHistoryHermeneutics"></cite>) argue, we need what they call "digital hermeneutics" — critical reflection on how computational infrastructures intervene in research practices across every phase from search through interpretation to publication (p. 8). This means recognising that system architecture itself, i.e. how we chunk texts, rank results, choose and prompt models, makes epistemological choices that must be made visible and contestable rather than hidden in "seamless" interfaces, and that these infrastructures are an integral part of our process of historical knowledge production.
@@ -118,7 +115,7 @@ The outputs of this process are what we call *Zwischentexte* — intermediate te
 
 As a consequence, our approach also liberates historians from dependence on commercial RAG platforms, whose design choice, optimised for efficiency rather than methodological rigour, would otherwise predetermine the epistemic framework of historical inquiry.
 
-<!-- #endregion -->
+
 
 **Structure of the Paper**
 
@@ -129,13 +126,13 @@ In the following sections, we operationalise this framework through SPIEGELragge
 
 The arguments made here are the results of a long period of testing and refining both SPIEGELragged and our broader conceptualisation of what LLMs can mean for the future of historical work. Throughout this period our approach has been to stress test through actual application on historical research questions. We started in a classroom setting where we focused on the representation of decolonisation in German media. In this paper we will be doing the same, however, with the focus on computerisation and automation in West Germany from 1950 to 1979. We will use this research question to display the functionalities, possibilities and limitations of our SPIEGELragged application, thereby introducing and evaluating the DH 2.0 framework.
 
-<!-- #region citation-manager={"citations": {"schmitt2016DigitalgeschichteDeutschlandsForschungsbericht": {"id": "schmitt2016DigitalgeschichteDeutschlandsForschungsbericht"}, "welskopp2008HistorischeErkenntnis": {"id": "welskopp2008HistorischeErkenntnis"}}} -->
+
 ### **2.1 The Research Question**
 
 How did West German society's understanding of computerisation evolve from the 1950s through the 1970s? We operationalise this through two levels of analysis. First, at the level of terminology: how did the language used to describe computing shift from early anthropomorphising terms ("Elektronenhirn," "Maschinengehirn") through technical designations ("Rechner," "Computer") to bureaucratic abstractions ("EDV," "Datenverarbeitung")? These terms carried distinct connotations. The "Elektronenhirn" evoked both wonder and anxiety about artificial intelligence, while "EDV" suggested bureaucratic rationalisation and workplace transformation. Second, at the level of public sentiment: how did hopes and fears associated with computerisation and automation evolve across three decades?
 
 These questions have been addressed by existing scholarship through methods that face structural limitations our approach aims to overcome. As Schmitt et al. (<cite data-cite="schmitt2016DigitalgeschichteDeutschlandsForschungsbericht"></cite>) observe, computerisation history in Germany consists largely of "Einzelerzählungen" (individual stories about companies, sectors, or technologies that remain disconnected from comprehensive analysis of broader discourse patterns (p. 70)). What is needed, but methodologically difficult to achieve, is systematic engagement with large corpora of sources at a scale that, as Welskopp (<cite data-cite="welskopp2008HistorischeErkenntnis"></cite>, p. 11) argues, demands new methodological approaches beyond classical hermeneutic critique of individual documents.
-<!-- #endregion -->
+
 
 **The Analogue Approach**
 
@@ -143,13 +140,13 @@ Schuhmann's (2012) work represents a foundational historical treatment of comput
 
 Yet Schuhmann herself points to the necessity of more detailed investigation and the lack thereof. Regarding the ambivalent societal response to technological change in the early 1970s, she notes: "Auch wenn eingehende Untersuchungen dazu noch fehlen" (even though detailed investigations are still lacking) (p. 250). The gap she identifies is not one of interpretation but of coverage. Her methodology necessarily relies on what we might see as easily findable sources, such as the 1978 *Spiegel* issue "Uns steht eine Katastrophe bevor" (A disaster is looming) appears as emblematic precisely because its significance requires no discovery. It announces itself through the title and being placed as the cover story for the issue. Similarly, Bergien's (2017) work on computerisation and the security state builds core arguments from specific *Spiegel* issues easily associated with the topic through their titles (p. 258). These are the articles analogue researchers could locate through traditional archival methods: cover stories, indexed features, sources whose relevance is immediately apparent from metadata.
 
-<!-- #region citation-manager={"citations": {"busch2015DiskurslexikologieUndSprachgeschichte": {"id": "busch2015DiskurslexikologieUndSprachgeschichte"}}} -->
+
 **The DH 1.0 Approach**
 
 Busch (<cite data-cite="busch2015DiskurslexikologieUndSprachgeschichte"></cite>) addressed the coverage problem through corpus-based discourse lexicology. Analysing computerisation discourse across both parliamentary debate and the popular press (including 216 thematic articles from *Stern*) he systematically tracked the evolution of computerisation vocabulary from early anthropomorphising terms through to contemporary usage. His approach enabled pattern identification, for example mapping when "Elektronengehirn" gave way to "Computer," documenting semantic fields around automation terminology, and tracing the "Entfachsprachlichung" (de-specialisation) of technical vocabulary as it entered popular discourse (p. 215).
 
 Yet even this substantial corpus-linguistic effort confronted capacity constraints. Busch states: "eine lückenlose Vollerhebung des gesamten gemeinsprachlichen Technologiewortschatzes im STERN und im Parlament über vier Jahrzehnte hinweg aus Kapazitätsgründen nicht möglich" (p. 170) (a complete survey of technology vocabulary across four decades proved impossible). More fundamentally, Busch's method still required pre-selecting thematic articles, by choosing texts whose titles, cover stories, or explicit subject matter marked them as relevant. But as Busch himself notes, the popularisation of technology vocabulary occurs precisely through its dispersion into contexts where computerisation is *not* the primary topic, such as a business report mentioning "EDV" in passing, a political commentary assuming reader familiarity with "Automation," or a cultural feature treating computers as unremarkable background (p. 215). These secondary, diffuse mentions may reveal more about discourse normalisation than explicit thematisations.
-<!-- #endregion -->
+
 
 **The Methodological Gap**
 
@@ -161,7 +158,7 @@ Our research questions thus demand working across massive textual corpora in way
 
 This distinction matters because it diverges from how RAG systems are typically designed and evaluated. Standard RAG systems are built for factual retrieval, and consequentially as are their benchmarks. Given a question like "When was penicillin discovered?" the system should retrieve the passage containing the answer. This paradigm reflects RAG's origins in domains like medicine and law, where users seek specific, verifiable information (a drug interaction, a legal precedent or a technical specification). Success means finding *the* relevant passage. Our metaquestions have no single correct answer. They require synthesis across hundreds of sources, attention to contextual variation, and interpretive judgment about what patterns mean. HistoRAG is designed for this different mode of inquiry — not to answer questions but to support the construction of historically informed arguments about discourse evolution.
 
-<!-- #region citation-manager={"citations": {"brawand1995SpiegelStoryWieAlles": {"id": "brawand1995SpiegelStoryWieAlles"}, "enzensberger1962Einzelheiten1BewusstseinsIndustrie": {"id": "enzensberger1962Einzelheiten1BewusstseinsIndustrie"}, "schmitt2016DigitalgeschichteDeutschlandsForschungsbericht": {"id": "schmitt2016DigitalgeschichteDeutschlandsForschungsbericht"}}} -->
+
 ## **2.2 Der Spiegel as Corpus: Positioning and Justification**
 
 *Der Spiegel* emerges as an ideal corpus for investigating these discourse patterns for several interrelated reasons. Founded in 1947 as "Diese Woche" and relaunched as *Der Spiegel* in 1948, the magazine positioned itself as West Germany's leading news weekly by the 1950s (<cite data-cite="brawand1995SpiegelStoryWieAlles"></cite>). By 1956, circulation had grown eighteenfold from its 15,000 launch copies (<cite data-cite="enzensberger1962Einzelheiten1BewusstseinsIndustrie"></cite>), reaching approximately 490,000 by 1961 with an estimated readership of two million per issue. Crucially, this readership consisted not of mass audiences but of what Enzensberger termed "meinungsbildende Gruppen", such as teachers, journalists, higher-level employees, student representatives, politicians from city councillors to ministers (p. 63). The magazine's influence thus operated through a multiplier effect by shaping the discourse of those who themselves shaped public opinion.
@@ -171,7 +168,6 @@ The publication's temporal span makes it particularly valuable for tracking long
 Finally, the scale of the digitised archive creates both opportunity and necessity. With 102,189 articles across thirty years, the corpus exceeds what any individual researcher could systematically engage through close reading. 
 
 *Der Spiegel* was at the heart of the German post-war media landscape. It offers a wealth of issues and articles that were widely read by an informed readership directly affected by the issues of automation and computerisation. 
-<!-- #endregion -->
 
 <!-- #region tags=["hermeneutics"] -->
 ## **2.3 SPIEGEL Critique**
@@ -474,7 +470,7 @@ The temporal distribution reveals crucial patterns. Computerisation coverage rem
 The keyword frequency breakdown by decade reveals the terminological shift that structures the entire corpus. "Computer" dominates with over 2,000 articles, overwhelmingly concentrated in the 1970s, it became the standard term only in the late 1960s. "IBM" appears in approximately 1,340 articles across all three decades, reflecting the company's early and sustained presence in West German computing consciousness. The earlier vocabulary tells a more nuanced story than simple obsolescence, "Elektronenhirn" and "Elektronenrechner" are most visible in the 1960s rather than the 1950s. Not altogether unsurprising since the 1950s produced very little computerisation coverage overall in our corpus. Their near-absence in the 1970s marks the point at which anthropomorphising terminology gave way to the now-standard "Computer." "Automation" and "Kybernetik" show presence across the 1950s and 1960s, reflecting the period when computerisation was discussed primarily through its societal implications and intellectual frameworks rather than through the technology itself. "EDV" and "Datenverarbeitung" emerge as bureaucratic-administrative terms predominantly of the 1960s and 1970s. These temporal distributions become the basis for the vocabulary periodisation experiment in Section 5, where we test whether era-specific query terms produce temporally skewed retrieval.
 <!-- #endregion -->
 
-<!-- #region citation-manager={"citations": {"you2025SemanticsAngleWhen": {"id": "you2025SemanticsAngleWhen"}}} tags=["hermeneutics"] -->
+<!-- #region tags=["hermeneutics"] -->
 **Word Embeddings for Semantic Understanding**
 
 Having established an initial picture through keyword-based analysis, operating purely at the level of character sequences, we now take a first step toward semantic understanding by integrating FastText word embeddings into our RAG application. We chose FastText specifically because it handles subword information, making it robust for the morphologically rich German language and capable of generating meaningful vectors even for rare compound words common in our corpus, such as terms like "Elektronengehirn" or "Datenverarbeitungsanlage" that other embedding models might struggle with. Word embeddings (<cite data-cite="mikolov2013EfficientEstimationWord"></cite>) represent words as dense vectors in high-dimensional space, positioning them based on the words they typically co-occur with (following the concept that meaning derives from use and context). Semantic relationships thus manifest as geometric proximity. Cosine similarity between vectors (calculated as the angle between them) provides a measure of semantic relatedness. Words used in similar contexts cluster together in the embedding space. With similarity scores ranging from 0 (orthogonal, unrelated) to 1 (identical direction, closely related) (<cite data-cite="you2025SemanticsAngleWhen"></cite>). How this works in practice can be observed directly in our corpus. Words like 'Computer' and 'EDV,' which may never appear in identical phrases, are positioned in proximity because they occur in similar contexts, a relationship that becomes visible when we query the embedding space.
@@ -504,7 +500,7 @@ This approach exemplifies how we build our RAG system on established DH methods.
 ## **2.6 Compilation of a Demonstration Subcorpus**
 <!-- #endregion -->
 
-<!-- #region citation-manager={"citations": {"hachmeister2015HeideggersTestamentPhilosoph": {"id": "hachmeister2015HeideggersTestamentPhilosoph"}}} tags=["hermeneutics"] -->
+<!-- #region tags=["hermeneutics"] -->
 For the purpose of making the following demonstrations executable and reproducible for the reader, we create a smaller subcorpus that does not require resource-intensive computations over the entire corpus. This subcorpus employs two complementary selection strategies:
 <!-- #endregion -->
 
@@ -637,7 +633,6 @@ plt.show()
 
 ```
 
-<!-- #region citation-manager={"citations": {"schuhmann2012TraumVomPerfekten": {"id": "schuhmann2012TraumVomPerfekten"}}} -->
 ## **2.7 Two Metaquestions**
 
 As introduced previously, our analysis focuses on two interrelated metaquestions that operate at the level of discourse patterns rather than individual factual claims. We will now define these more clearly for our investigation.
@@ -649,7 +644,6 @@ How did the language used to describe computerisation and automation shift acros
 How did public discourse about computerisation and automation's consequences evolve from early euphoria to later anxieties? Schuhmann (<cite data-cite="schuhmann2012TraumVomPerfekten"></cite>) identifies a shift from celebration of the "perfekten Unternehmen" in the 1950s-60s to fears about unemployment and social disruption in the 1970s. Is this shift reflected in *Der Spiegel*? Was the shift gradual or punctuated by specific events (oil crisis, rising unemployment)? How did fears about automation relate to broader economic concerns? Crucially, did reader letters reflect, anticipate, or resist editorial framing?
 
 Both metaquestions demand analysis across the complete corpus, including articles where computerisation appears as a secondary theme rather than primary topic. They require distinguishing between different discourse contexts (business reporting, political commentary, cultural features) and comparing editorial and reader voices. Traditional archival research excels at deep analysis of selected key texts but cannot systematically track patterns across such scale. DH 1.0 methods could identify frequency patterns and co-occurrences but have limited ability to interpret the context of usage. This is precisely where our RAG system promises value. But only if designed to preserve rather than bypass the critical practices of source evaluation and interpretive authority that define historical scholarship.
-<!-- #endregion -->
 
 <!-- #region tags=["hermeneutics"] -->
 # 3. Building a RAG Pipeline
@@ -659,7 +653,7 @@ Having established our research questions and corpus, we now turn to the technic
 To reiterate the construction of a RAG pipeline is not merely technical; it is an act of scholarly mediation. Each component (how we divide texts, how we represent meaning numerically, how we measure similarity) embeds assumptions about what constitutes relevance and relationship. Following Agre's (1998) call for Critical Technical Practice, we approach these technical choices as sites requiring explicit methodological reflection. The goal is not to optimise for benchmark performance, but to design infrastructure that preserves historians' epistemological agency and interpretive authority while enabling computational scale.
 <!-- #endregion -->
 
-<!-- #region citation-manager={"citations": {"lewis2020RetrievalAugmentedGenerationKnowledgeIntensive": {"id": "lewis2020RetrievalAugmentedGenerationKnowledgeIntensive"}}} tags=["hermeneutics"] -->
+<!-- #region tags=["hermeneutics"] -->
 ## 3.1 Grounding Generation in Sources
 
 RAG emerged as a response to fundamental limitations of Large Language Models. While LLMs generate fluent text, their knowledge is encoded implicitly in neural network weights, they cannot cite sources, easily update their knowledge, or explain why they produced a particular response. Lewis et al. (<cite data-cite="lewis2020RetrievalAugmentedGenerationKnowledgeIntensive"></cite>) introduced RAG as an architecture that combines "parametric memory" (what the model learned during training) with "non-parametric memory" (an external, searchable knowledge base). This separation is crucial because rather than asking the model to recall facts from training, RAG retrieves relevant documents and provides them as context for generation.
@@ -702,7 +696,7 @@ print(f"Character count range: {subcorpus['char_count'].min():,} - {subcorpus['c
 print(f"Mean article length: {subcorpus['char_count'].mean():,.0f} characters")
 ```
 
-<!-- #region citation-manager={"citations": {"qu2024SemanticChunkingWorth": {"id": "qu2024SemanticChunkingWorth"}}} tags=["hermeneutics"] -->
+<!-- #region tags=["hermeneutics"] -->
 Several chunking strategies exist, each with distinct implications.
 
 - **Fixed-size chunking** divides text at regular character or word intervals regardless of content. While computationally simple, this approach may split sentences mid-thought or separate closely related passages.
@@ -905,7 +899,7 @@ This trade-off between precision and context cannot be resolved algorithmically,
 Therefore in SPIEGELragged, we aim to preserve this choice as an explicit research decision. Users select their preferred chunking configuration at the start of a session, with the understanding that this shapes the subsequent retrieval landscape. This transparency contrasts with commercial RAG systems that hide such decisions behind seamless interfaces.
 <!-- #endregion -->
 
-<!-- #region citation-manager={"citations": {"nussbaum2025NomicEmbedTraining": {"id": "nussbaum2025NomicEmbedTraining"}, "nussbaum2025TrainingSparseMixture": {"id": "nussbaum2025TrainingSparseMixture"}, "simons2025LargeLanguageModelsa": {"id": "simons2025LargeLanguageModelsa"}}} notebookRunGroups={"groupValue": "2"} tags=["hermeneutics"] -->
+<!-- #region notebookRunGroups={"groupValue": "2"} tags=["hermeneutics"] -->
 ## 3.3 Embedding: Representing Text as Vectors
 
 For the preceding experiment comparing chunking sizes, we already applied text embedding to evaluate retrieval quality. We now introduce this technique more precisely. In Section 2.6, we used word embeddings (FastText) to explore the vocabulary of our corpus. Text embedding extends this principle from single words to variable-length passages. A sentence, a paragraph, or an entire chunk is transformed into a single fixed-dimensional vector where geometric proximity corresponds to semantic similarity. The term "sentence embedding" is sometimes used synonymously, originating with models like Sentence-BERT, though "text embedding" more accurately describes what we do when embedding multi-paragraph chunks. 
@@ -963,7 +957,7 @@ Furthermore, the model itself cannot interpret between neutral description ("Com
 We invite further research into embedding model performance on historical language varieties. Our 1950s-1970s corpus uses modern standard German and presented no significant issues. However, experiments with other texts such as medieval documents, dialectal sources, or texts with substantial orthographic variation revealed significant limitations. This remains an open question with important implications for Digital History practice, particularly as researchers increasingly apply these methods to pre-modern sources.
 <!-- #endregion -->
 
-<!-- #region citation-manager={"citations": {"you2025SemanticsAngleWhen": {"id": "you2025SemanticsAngleWhen"}}} tags=["hermeneutics"] -->
+<!-- #region tags=["hermeneutics"] -->
 ## 3.4 Vector Storage and Retrieval
 
 Having chunked our corpus, we now embed all chunks using our chosen model, transforming each text segment into a 768-dimensional vector. At medium chunking settings, the full *Der Spiegel* corpus produces approximately 200,000 chunks. This is a substantial computational step, but one that needs to be performed only once (or repeated when changing embedding models or chunking parameters). The resulting vectors must then be stored in infrastructure that allows efficient similarity search. When a user submits a query, the system must find the most similar vectors among these 200,000 candidates, ideally in milliseconds rather than minutes.
@@ -1016,7 +1010,7 @@ for key, value in docs[0].metadata.items():
     print(f"  {key}: {value}")
 ```
 
-<!-- #region citation-manager={"citations": {"fatemi2024TestTimeBenchmark": {"id": "fatemi2024TestTimeBenchmark"}, "huang2024SurveyRetrievalAugmentedText": {"id": "huang2024SurveyRetrievalAugmentedText"}, "murugaraj2025TopicRAGHistoricalNewspapers": {"id": "murugaraj2025TopicRAGHistoricalNewspapers"}}} tags=["hermeneutics"] -->
+<!-- #region tags=["hermeneutics"] -->
 ## 3.5 Where Standard RAG Falls Short for Historical Research
 
 The pipeline we have described (chunking, embedding, vector storage, similarity search) constitutes the standard RAG architecture. Since Lewis et al.'s (2020) foundational work, research on RAG has expanded considerably. Huang and Huang (<cite data-cite="huang2024SurveyRetrievalAugmentedText"></cite>) organise the field into four phases: pre-retrieval (how documents are indexed and queries refined), retrieval (the search and ranking process), post-retrieval (filtering and reordering results), and generation (how the LLM produces output). Most enhancements focus on improving retrieval accuracy for question-answering tasks (finding the single best passage to answer a factual query).
@@ -1034,11 +1028,10 @@ Standard RAG systems flow seamlessly from query to retrieval to generation. A us
 
 Our system's architecture formally separates these phases through a two-tab interface: **Heuristik** (heuristics: retrieval and corpus construction) and **Analyse** (analysis: LLM-assisted interpretation). This separation computationally implements what historians do naturally. The heuristic phase of source discovery precedes and remains distinct from the interpretive engagement with assembled materials.
 
-<!-- #region citation-manager={"citations": {"rusen2019EvidenceMeaningTheory": {"id": "rusen2019EvidenceMeaningTheory"}}} -->
+
 The term *Heuristik* deliberately invokes the systematic finding and gathering of sources relevant to a research question. Johann Gustav Droysen's *Historik* (1857) established heuristics as the foundational phase of historical inquiry. Before *Kritik*, i.e. source criticism, and *Interpretation* can begin, the historian must assemble a corpus of relevant materials. Standard RAG bypasses this phase entirely, treating source selection as a technical optimisation problem rather than a scholarly judgment. Users upload documents but make no decisions about which parts of these documents are included in the answering of their queries. Our separation restores this methodological distinction, which in standard RAG systems is usually collapsed into a single step.
 
 The Heuristik tab encompasses both finding (similarity search, filtering) and evaluating potential relevance (metadata examination, relevance scoring, manual curation of the working corpus). The Analyse tab enables interpretation, the synthetic work of constructing meaning from assembled evidence.
-<!-- #endregion -->
 
 <!-- #region tags=["hermeneutics"] -->
 ## 4.1 Two Queries, Two Purposes
@@ -1253,7 +1246,7 @@ An example reasoning summary excerpt, from an analysis of reader letters discuss
 > *"In 1964, there was a significant moment reflected in letters to The Spiegel about automation. Readers advocated for a planned economy to combat unemployment, raising concerns about 'total overproduction' and the illusions of full automation. Some unions claimed that electronic data processing (EDP) wouldn't lead to staff reductions, while others emphasised the need for automation to address demographic changes... I notice an interesting letter from 1966 where Dr. Friedrichs from IG Metall takes a mature stance, correcting misquotes and indicating that the union is now entangled with computing, contemplating fears of mismanagement instead of fearing robots... I'll connect these themes through letters, showing how automation's meaning evolved and how societal reflections contest dominant narratives."*
 <!-- #endregion -->
 
-<!-- #region citation-manager={"citations": {"rusen2019EvidenceMeaningTheory": {"id": "rusen2019EvidenceMeaningTheory"}}} tags=["hermeneutics"] -->
+<!-- #region tags=["hermeneutics"] -->
 A critical caveat is that these "reasoning" outputs should not be understood as windows into actual model cognition. LLMs are autoregressive text generators. They produce tokens sequentially based on learned probability distributions, not through explicit logical reasoning. The "Chain of Thought" paradigm prompts models to generate intermediate steps that *resemble* reasoning, and empirically this improves performance on certain tasks. But the generated reasoning steps are themselves outputs, not process logs. They may represent purely text-based post-hoc rationalisation rather than the actual computational path to an answer (<cite data-cite="chen2025ReasoningModelsDont"></cite>).
 
 OpenAI's documentation for its o1 reasoning model acknowledges this explicitly: the visible reasoning summary is generated content *about* the model's processing, not a direct transcript of it (<cite data-cite="openai2024OpenAIO1System"></cite>). For historical research, these summaries can nonetheless be valuable as they document the analytical moves the model claims to have made, identify which sources it emphasised, and reveal the narrative structure it constructed. We can treat them as interpretive artifacts to be critically examined rather than authoritative accounts of model reasoning.
@@ -1289,7 +1282,7 @@ After designing a seperation in retrieval and generation alligned with our metho
 
 For metaquestions involving discourse evolution this temporal bias is methodologically problematic. Section 5 introduces our second architectural innovation: temporal windowing, which ensures balanced retrieval across the search timeframe.
 
-<!-- #region citation-manager={"citations": {"mohr2015ComputationalHermeneutics": {"id": "mohr2015ComputationalHermeneutics"}, "welskopp2008HistorischeErkenntnis": {"id": "welskopp2008HistorischeErkenntnis"}}} -->
+
 ## 5.1 Time and Historical Research: Theoretical Foundations
 
 Before examining the technical challenge, we must understand why temporality matters fundamentally to historical scholarship, not merely as a practical concern but as an epistemological foundation for our metaquestions. Welskopp (<cite data-cite="welskopp2008HistorischeErkenntnis"></cite>) identifies what he terms the *Kontinuitätsannahme* (continuity assumption) as one of the foundational pillars of historical method. It is the principle that historical understanding requires tracing connections across time, seeing how phenomena develop, transform, and relate to what came before and after. This is not merely an assumption but a methodological commitment by historians to approach their objects through what Welskopp calls "historische Betrachtungsweise" (historical perspective), which he argues defines the discipline more fundamentally than any specific technique (p. 11). The question is not *what* methods historians use (as these vary widely across subfields) but *how* they approach their objects: as phenomena embedded in and shaped by temporal contexts that must be reconstructed.
@@ -1297,9 +1290,8 @@ Before examining the technical challenge, we must understand why temporality mat
 This temporal orientation creates particular challenges for computational methods. Embedding models encode text in semantic spaces shaped by contemporary language patterns. They lack the temporal situatedness that enables historians to recognise when vocabulary, concepts, or framings mark their historical moment. The embedding model that encodes our query does not from its parametric knowledge contextualise that "Elektronengehirn" represents a specific historical moment's way of making meaning about computing technology.
 
 To address this challenge, we introduce *temporal windowing*: rather than retrieving the top-N most similar chunks across the entire corpus, we divide the search period into temporal windows and retrieve proportionally from each. This ensures balanced temporal representation regardless of how vocabulary similarity distributes across decades. In the following sections, we first demonstrate the problem (5.2), then examine what temporal windowing reveals (5.3), before reflecting on the methodological implications (5.4).
-<!-- #endregion -->
 
-<!-- #region citation-manager={"citations": {"busch2015DiskurslexikologieUndSprachgeschichte": {"id": "busch2015DiskurslexikologieUndSprachgeschichte"}}} tags=["hermeneutics"] -->
+<!-- #region tags=["hermeneutics"] -->
 ## 5.2 The Technical Challenge: Vocabulary Drift as Retrieval Bias
 
 These theoretical concerns manifest concretely in semantic search. Consider our metaquestion about terminology evolution. When we search for content about "Computer, Automatisierung, Arbeitslosigkeit" (computers, automation, unemployment), the embedding model encodes this query in a semantic space shaped by the contemporary language patterns from which most of its training data derives. Chunks from the late 1970s, when "Computer" had become the dominant term and automation anxieties were mainstream political discourse, will naturally score higher in similarity than chunks from the early 1950s, when the same phenomena were described as "Elektronengehirn" (electronic brain) or "Rechenmaschine" (calculating machine).
@@ -1311,7 +1303,7 @@ Busch (<cite data-cite="busch2015DiskurslexikologieUndSprachgeschichte"></cite>)
 The temporal imbalance in our corpus compounds this problem. As documented in Section 2, the 1970s produced 41% of our corpus articles compared to 24% from the 1950s, a near two-to-one ratio. Combined with vocabulary drift, standard retrieval would produce corpora heavily skewed toward particular periods. For questions about discourse *evolution*, this would be methodologically catastrophic, as we would retrieve the destination without documenting the journey, thereby violating the *Kontinuitätsannahme* that historical understanding requires tracing temporal connections.
 <!-- #endregion -->
 
-<!-- #region citation-manager={"citations": {"busch2015DiskurslexikologieUndSprachgeschichte": {"id": "busch2015DiskurslexikologieUndSprachgeschichte"}}} tags=["hermeneutics"] -->
+<!-- #region tags=["hermeneutics"] -->
 ## 5.3 Demonstrating Query Fragility: Vocabulary Choice as Temporal Filter
 
 The theoretical problem becomes empirically visible through a simple experiment. If vocabulary evolved across three decades of computerisation discourse, then queries using era-specific terminology should retrieve disproportionately from those eras. We test this by constructing three query sets based on Busch's (2015) periodisation of computerisation vocabulary:
@@ -1602,7 +1594,7 @@ The pattern confirms temporal windowing's methodological function: articles surf
 
 The relevance score differential makes the trade-off explicit. It is important to note that the relevance score here measures thematic proximity to the query, not relevance for the research question. This is a distinction we address through LLM-as-a-Judge evaluation in section 6. Surfaced articles score lower (mean: 0.703) than deprioritised articles (mean: 0.753). By guaranteeing temporal balance, we accept lower aggregate similarity in exchange for temporal coverage. This is a deliberate methodological choice, we treat temporal representativeness as a dimension of relevance that similarity metrics alone cannot capture.
 
-<!-- #region citation-manager={"citations": {"agre1998CriticalTechnicalPractice": {"id": "agre1998CriticalTechnicalPractice"}}} tags=["hermeneutics"] -->
+<!-- #region tags=["hermeneutics"] -->
 ## 5.4 Temporal Windowing as Methodological Intervention
 
 Temporal windowing addresses this bias through a simple but consequential design choice. Rather than retrieving the top-N most similar chunks across the entire corpus, we divide the search period into temporal windows and retrieve proportionally from each. For a thirty-year corpus searched in six five-year windows with twenty chunks per window, we guarantee balanced representation regardless of how vocabulary similarity distributes across time.
@@ -1625,7 +1617,7 @@ def _create_time_windows(self, start_year: int, end_year: int) -> List[Tuple[int
 ```
 <!-- #endregion -->
 
-<!-- #region citation-manager={"citations": {"welskopp2008HistorischeErkenntnis": {"id": "welskopp2008HistorischeErkenntnis"}}} tags=["hermeneutics"] -->
+<!-- #region tags=["hermeneutics"] -->
 The simplicity is intentional. Each window receives equal retrieval allocation regardless of corpus density or similarity scores within that window. This implements computationally what historians do intuitively in traditional research, ensuring temporal coverage for the period under investigation. A historian investigating discourse evolution would not simply read the most accessible sources; they would deliberately sample across the full period, knowing that early sources require different finding strategies than later ones, including different archives, different search terms, and different contextual knowledge. Temporal windowing embeds this methodological commitment into the retrieval architecture.
 
 The trade-off is explicit and contestable. As Welskopp (<cite data-cite="welskopp2008HistorischeErkenntnis"></cite>) argues, "die Methode folgt aus der Frage und der Theorie" (method follows from question and theory) — there is no universal optimum, only choices appropriate to specific inquiries (p. 11). By guaranteeing temporal balance, we accept that some windows will yield lower-similarity chunks than a global search would have retrieved. For the 1950s windows, we retrieve chunks at lower similarity scores while potentially excluding higher-scoring chunks from the 1970s. 
@@ -1706,7 +1698,7 @@ Our third methodological intervention tackles this problem. After retrieval and 
 
 This section addresses two questions. First, can we design evaluation criteria that capture interpretive relevance to our research question, not just semantic similarity? Second, what is the relationship between vector similarity scores and research question relevance? The relationship between RAG-based and keyword-based retrieval, and what each contributes, is addressed in section 6.6.
 
-<!-- #region citation-manager={"citations": {"gao2024RetrievalAugmentedGenerationLarge": {"id": "gao2024RetrievalAugmentedGenerationLarge"}, "gu2024SurveyLLMasaJudge": {"id": "gu2024SurveyLLMasaJudge"}, "murugadoss2024EvaluatingEvaluatorMeasuring": {"id": "murugadoss2024EvaluatingEvaluatorMeasuring"}, "nogueira2020PassageRerankingBERT": {"id": "nogueira2020PassageRerankingBERT"}}} -->
+
 ## 6.2 LLM-as-a-Judge in RAG
 
 The use of LLMs to evaluate retrieval relevance has emerged as a significant research direction within RAG system development. Gao et al. (<cite data-cite="gao2024RetrievalAugmentedGenerationLarge"></cite>) identify post-retrieval processing as a key component of "Advanced RAG" architectures, noting that re-ranking models can address the limitations of initial retrieval by evaluating document relevance more carefully before generation. Nogueira and Cho (<cite data-cite="nogueira2020PassageRerankingBERT"></cite>) demonstrated that BERT-based passage re-ranking significantly improves retrieval quality by moving beyond simple similarity matching to learned relevance judgments.
@@ -1716,7 +1708,6 @@ The "LLM-as-a-judge" paradigm (<cite data-cite="gu2024SurveyLLMasaJudge"></cite>
 Historical scholarship presents a different challenge. Our evaluation criteria are not factual correctness but interpretive utility. Our focus is on questioning if a source provides insights useful for our research question. Does it capture the affective dimension of technological discourse, what understanding of computerisations do texts reveal, what attitudes? These are inherently subjective judgments that cannot be reduced to binary relevance classifications, the procedural reasoning steps to arrive at these judgements are important to evaluate as well. Unlike information retrieval benchmarks where ground truth exists, historical relevance depends on the research question being asked and interpretation.
 
 Can LLMs be utilised for this challenge and if we do use LLMs for our interpretive judgements how do we do so successfully, and how would we even define success? Murugadoss et al. (<cite data-cite="murugadoss2024EvaluatingEvaluatorMeasuring"></cite>) examined the factors that influence agreement between LLM evaluations and human judgments. On a base level they found that *certain* models are effective at judging task-specific relevance. In terms of methodology for implementation they found that even providing highly specific scoring instructions improved LLM-human alignment by only approximately 4%. For our purposes, this finding is significant, the value of making our evaluation criteria explicit lies not primarily in improving the LLM's accuracy but in creating transparency about *what dimensions of relevance are being evaluated*. We cannot assert that LLM evaluations match what a historian would judge; we can only ensure that the basis for judgment is visible and contestable.
-<!-- #endregion -->
 
 <!-- #region tags=["hermeneutics"] -->
 ## 6.3 Designing Evaluation Criteria for Historical Research
@@ -2380,11 +2371,11 @@ The Zwischentexte propose an additional, more structural thesis: technological a
 
 The synthesis offers an interpretation of this passage, arguing that technological anxiety becomes socially *explosive* only when it reaches the classes that produce public discourse. The journalists, professionals, the educated middle class who wrote to the SPIEGEL and were its core audience. Workers had been articulating concerns for decades; the discourse shifted when the magazine's own readers felt personally threatened. This is not to minimise working-class concerns but to identify a structural feature of how technological anxiety gets amplified in media discourse.
 
-<!-- #region citation-manager={"citations": {"shearer1995TalkingEfficiencyPolitics": {"id": "shearer1995TalkingEfficiencyPolitics"}}} -->
+
 ## 7.3 Validating Zwischentexte: How the Historian Engages Zwischentexte
 
 The findings summarised above sound compelling. But are they warranted by the sources? The historian-in-the-loop architecture requires that we demonstrate validation, not merely assert it.
-<!-- #endregion -->
+
 
 ### Where Historian Judgment Agrees
 
@@ -2559,7 +2550,7 @@ This distribution of labour is not a compromise with efficiency but an expressio
 
 Given these demands, why should historians engage with LLM-based systems rather than continuing with established methods? The answer is not that LLMs make research easier but that they make certain questions possible. Our metaquestions require synthesis across hundreds of sources. Traditional close reading could address individual texts with depth; corpus linguistics could track frequency patterns without interpretive synthesis; neither could combine scale with semantic attention in the way RAG enables.
 
-<!-- #region citation-manager={"citations": {"xu2025HallucinationInevitableInnate": {"id": "xu2025HallucinationInevitableInnate"}}} -->
+
 ## 8.5 Methodological Principles Emerging from These Findings
 
 As Chen (<cite data-cite="chen2025ToolsGenerativeAI"></cite>) argues, generative AI should be understood not merely as a tool but as epistemic infrastructure, a perspective that aligns with our emphasis on preserving epistemic agency throughout the research process.
@@ -2573,7 +2564,7 @@ How might the historical discipline establish critically reflexive practices aro
 **Substantive demonstration**: The strongest argument for methodologically-informed RAG will be scholarship that uses these methods to produce historical insights rather than methodological papers about the methods themselves. Our findings about 1964 as an earlier rupture, about "Rationalisierung" as vernacular frame, about class migration of technological anxiety — these are preliminary, requiring further research, but they gesture toward what RAG-enabled scholarship might contribute.
 
 **Community standards**: As LLM usage becomes more common, disciplinary conversations about appropriate practices become urgent. What level of validation suffices? When should LLM-generated text be disclosed? How should Zwischentexte be cited, if at all? These questions do not yet have settled answers, but the conversations are necessary.
-<!-- #endregion -->
+
 
 ## 8.6 On Agentic Systems
 
