@@ -2038,10 +2038,10 @@ Although LLM-as-a-judge creates outputs that are visible and contestable, we do 
 ```python
 # Load model comparison data
 models = {
-    'Claude': pd.read_csv('script/chapter_6/brief_llm_comp_claude.csv'),
-    'Gemini': pd.read_csv('script/chapter_6/brief_llm_comp_gemini.csv'),
-    'DeepSeek': pd.read_csv('script/chapter_6/brief_llm_comp_deepseek.csv'),
-    'Mistral': pd.read_csv('script/chapter_6/brief_llm_comp_mistral.csv')
+    'Claude': pd.read_csv('script/chapter_6/brief_LLM_comp_claude.csv'),
+    'Gemini': pd.read_csv('script/chapter_6/brief_LLM_comp_gemini.csv'),
+    'DeepSeek': pd.read_csv('script/chapter_6/brief_LLM_comp_deepseek.csv'),
+    'Mistral': pd.read_csv('script/chapter_6/brief_LLM_comp_mistral.csv')
 }
 ```
 
