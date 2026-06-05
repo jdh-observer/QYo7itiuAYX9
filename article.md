@@ -2684,6 +2684,10 @@ The future of AI in historical research will be determined not by the technology
 
 In the end: The tools should not determine the questions, the questions should determine the tools, and the historian should determine both.
 
+
+<!-- #endregion -->
+
+<!-- #region tags=["hidden"] -->
 ## Bibliography
 
 <div class="cite2c-biblio"></div>
@@ -2737,7 +2741,3 @@ In the end: The tools should not determine the questions, the questions should d
 </div>
 <!-- BIBLIOGRAPHY END -->
 <!-- #endregion -->
-
-```python
-
-```
