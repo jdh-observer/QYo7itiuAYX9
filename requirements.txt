@@ -1,6 +1,6 @@
 ﻿pandas
 numpy
-matplotlib
+matplotlib==3.8.4
 seaborn
 scipy
 langchain-core
