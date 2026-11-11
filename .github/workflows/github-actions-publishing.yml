@@ -3,7 +3,7 @@ on: [workflow_dispatch]
 name: GitHub Actions Ipynb for publishing
 jobs:
   ipynb_for_publishing:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     name: Ipynb for publishing
     steps:
       - name: checkout repo
