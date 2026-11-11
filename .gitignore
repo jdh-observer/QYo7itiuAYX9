@@ -1,2 +1,4 @@
 **/.ipynb_checkpoints/
 .DS_Store
+corpus_data/csv_daten/
+script/keyword_briefe.csv

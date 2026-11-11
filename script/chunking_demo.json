@@ -1,0 +1,38 @@
+{
+  "sample_article": {
+    "url": "https://www.spiegel.de/politik/einzug-der-roboter-a-ec698c0f-0002-0001-0000-000046173388?context=issue",
+    "title": "Einzug der Roboter",
+    "char_count": 56633,
+    "chunking": {
+      "large": {
+        "n_chunks": 21,
+        "avg_len": 2883.6666666666665,
+        "second_chunk_preview": "Seine Spitzenverdiener können ohnehin nirgends zupacken. Die Buna-Fabrik der Chemische Werke Hüls AG"
+      },
+      "medium": {
+        "n_chunks": 31,
+        "avg_len": 1915.774193548387,
+        "second_chunk_preview": "Kurt Pentzlin, 61, einer der angesehensten Rationalisierungsfachleute Westdeutschlands. »Was wir bra"
+      },
+      "small": {
+        "n_chunks": 144,
+        "avg_len": 395.3611111111111,
+        "second_chunk_preview": "Der Arbeiter, der die Automatik auslöst, weiß nicht einmal, welchen Kuchen er gerade herstellt. Er w"
+      }
+    }
+  },
+  "document_preparation": {
+    "n_articles": 50,
+    "n_documents": 202,
+    "first_metadata": {
+      "Artikeltitel": "Einzug der Roboter",
+      "Datum": "1964-03-31 00:00:00",
+      "Year": 1964,
+      "Ausgabe": 14,
+      "URL": "https://www.spiegel.de/politik/einzug-der-roboter-a-ec698c0f-0002-0001-0000-000046173388?context=issue",
+      "chunk_index": 0,
+      "total_chunks": 31,
+      "has_computerisation": true
+    }
+  }
+}

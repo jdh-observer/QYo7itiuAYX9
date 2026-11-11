@@ -1,1 +1,7 @@
-jupyterlab-citation-manager==1.0.0
+﻿pandas
+numpy
+matplotlib==3.8.4
+seaborn
+scipy
+langchain-core
+langchain-text-splitters
